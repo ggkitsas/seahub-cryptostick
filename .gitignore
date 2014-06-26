@@ -24,7 +24,6 @@
 *tags
 *.swp
 
-ccnet/
 logs/
 seafile-server/runtime/
 seafile-server/seahub/media/avatars
