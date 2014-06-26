@@ -1,0 +1,3 @@
+[submodule "seafile-server/src/seafile"]
+	path = seafile-server/src/seafile
+	url = git@github.com:ggkitsas/seafile.git
