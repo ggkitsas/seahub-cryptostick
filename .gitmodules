@@ -1,3 +1,9 @@
 [submodule "seafile-server/src/seafile"]
 	path = seafile-server/src/seafile
 	url = git@github.com:ggkitsas/seafile.git
+[submodule "seafile-server/src/ccnet"]
+	path = seafile-server/src/ccnet
+	url = git@github.com:ggkitsas/ccnet.git
+[submodule "seafile-server/src/libsearpc"]
+	path = seafile-server/src/libsearpc
+	url = git@github.com:ggkitsas/libsearpc.git
