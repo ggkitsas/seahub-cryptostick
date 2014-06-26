@@ -7,3 +7,6 @@
 [submodule "seafile-server/src/libsearpc"]
 	path = seafile-server/src/libsearpc
 	url = git@github.com:ggkitsas/libsearpc.git
+[submodule "seafile-server/seahub"]
+	path = seafile-server/seahub
+	url = git@github.com:ggkitsas/seahub.git
