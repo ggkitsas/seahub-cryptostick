@@ -2,9 +2,9 @@
 
 ROOT_DIR=`pwd`
 SRC_DIR=$ROOT_DIR/seafile-server/src
-SEARPC_DIR=$SRC_DIR/libsearpc-3.0.3-server
-CCNET_DIR=$SRC_DIR/ccnet-3.0.3-server
-SEAFILE_DIR=$SRC_DIR/seafile-3.0.4-server
+SEARPC_DIR=$SRC_DIR/libsearpc
+CCNET_DIR=$SRC_DIR/ccnet
+SEAFILE_DIR=$SRC_DIR/seafile
 SEAHUB_DIR=$ROOT_DIR/seafile-server/seahub
 ZDB_DIR=$SRC_DIR/libzdb-2.12
 EVHTP_DIR=$SRC_DIR/libevhtp-1.1.6

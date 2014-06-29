@@ -2,9 +2,9 @@
 
 ROOT_DIR=`pwd`
 SRC_DIR=$ROOT_DIR/seafile-server/src
-SEARPC_DIR=$SRC_DIR/libsearpc-3.0.3-server
-CCNET_DIR=$SRC_DIR/ccnet-3.0.3-server
-SEAFILE_DIR=$SRC_DIR/seafile-3.0.4-server
+SEARPC_DIR=$SRC_DIR/libsearpc
+CCNET_DIR=$SRC_DIR/ccnet
+SEAFILE_DIR=$SRC_DIR/seafile
 SEAHUB_DIR=$ROOT_DIR/seafile-server/seahub
 ZDB_DIR=$SRC_DIR/libzdb-2.12
 EVHTP_DIR=$SRC_DIR/libevhtp-1.1.6
@@ -24,36 +24,45 @@ export PYTHONPATH=$SEAHUB_DIR/thirdpart:$BUILD_DIR/lib/python2.7/site-packages
 
 # Build libzdb
 cd $ZDB_DIR
+echo "*******************Building libzdb**************************"
+./bootstrap
 ./configure --prefix=$PREFIX
 make -j$1
 make install
 
 # Build libevhtp
 cd $EVHTP_DIR
+echo "*******************Building libevhtp***************************"
 cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX .
 make -j$1
 make install
 
 # Build libsearpc
 cd $SEARPC_DIR
+echo "*******************Building libsearpc***************************"
 ./autogen.sh
 ./configure --prefix=$PREFIX
 cp $PATCH_DIR/searpc-marshal.h.libsearpc ./demo/searpc-marshal.h
 make -j$1 && make install
 
+
 # Build ccnet
+echo "*******************Building ccnet***************************"
 cd $CCNET_DIR
 ./autogen.sh
 ./configure --prefix=$PREFIX --disable-client --enable-server
 cp $PATCH_DIR/searpc-marshal.h.ccnet ./lib/searpc-marshal.h
 make -j$1 && make install
 
+
 # Build seafile
 cd $SEAFILE_DIR
+echo "*******************Building seafile***************************"
 ./autogen.sh
 ./configure --prefix=$PREFIX --disable-client --enable-server
 cp $PATCH_DIR/searpc-marshal.h.seafile ./lib/searpc-marshal.h
 make -j$1 && make install
+
 
 # Deploy Seahub
 ccnet-init -c $CCNET_CONF_DIR -n 'ggkitsas'
