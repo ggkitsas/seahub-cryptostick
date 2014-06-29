@@ -55,15 +55,3 @@ seahub-data/
 seahub.db
 seahub_settings.py
 seahub_settings.pyc
-
-seafile-server/src/libzdb-2.12/Makefile.in
-seafile-server/src/libzdb-2.12/aclocal.m4
-seafile-server/src/libzdb-2.12/config/ltmain.sh
-seafile-server/src/libzdb-2.12/configure
-seafile-server/src/libzdb-2.12/m4/libtool.m4
-seafile-server/src/libzdb-2.12/m4/ltoptions.m4
-seafile-server/src/libzdb-2.12/m4/ltsugar.m4
-seafile-server/src/libzdb-2.12/m4/ltversion.m4
-seafile-server/src/libzdb-2.12/m4/lt~obsolete.m4
-seafile-server/src/libzdb-2.12/test/Makefile
-seafile-server/src/libzdb-2.12/test/Makefile.in
