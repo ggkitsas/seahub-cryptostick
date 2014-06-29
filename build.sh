@@ -1,15 +1,15 @@
 #!/bin/sh
 
-ROOT_DIR=`pwd`
-SRC_DIR=$ROOT_DIR/seafile-server/src
-SEARPC_DIR=$SRC_DIR/libsearpc
-CCNET_DIR=$SRC_DIR/ccnet
-SEAFILE_DIR=$SRC_DIR/seafile
-SEAHUB_DIR=$ROOT_DIR/seafile-server/seahub
-ZDB_DIR=$SRC_DIR/libzdb-2.12
-EVHTP_DIR=$SRC_DIR/libevhtp-1.1.6
-BUILD_DIR=$ROOT_DIR/build
-PATCH_DIR=$ROOT_DIR/patches
+export ROOT_DIR=`pwd`
+export SRC_DIR=$ROOT_DIR/seafile-server/src
+export SEARPC_DIR=$SRC_DIR/libsearpc
+export CCNET_DIR=$SRC_DIR/ccnet
+export SEAFILE_DIR=$SRC_DIR/seafile
+export SEAHUB_DIR=$ROOT_DIR/seafile-server/seahub
+export ZDB_DIR=$SRC_DIR/libzdb-2.12
+export EVHTP_DIR=$SRC_DIR/libevhtp-1.1.6
+export BUILD_DIR=$ROOT_DIR/build
+export PATCH_DIR=$ROOT_DIR/patches
 export CCNET_CONF_DIR=$BUILD_DIR/.ccnet
 export SEAFILE_CONF_DIR=$BUILD_DIR/.seaf-server
 
@@ -18,6 +18,39 @@ export PATH=$BUILD_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$BUILD_DIR/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$BUILD_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 export PYTHONPATH=$SEAHUB_DIR/thirdpart:$BUILD_DIR/lib/python2.7/site-packages
+
+BUILD_SCRIPTS_DIR=$ROOT_DIR/build-scripts
+
+case "$1" in
+"zdb")
+    $BUILD_SCRIPTS_DIR/zdb-build.sh
+    ;;
+"evhtp")
+    $BUILD_SCRIPTS_DIR/evhtp-build.sh
+    ;;
+"searpc")
+    $BUILD_SCRIPTS_DIR/searpc-build.sh
+    ;;
+"ccnet")
+    $BUILD_SCRIPTS_DIR/ccnet-build.sh
+    ;;
+"seafile")
+    $BUILD_SCRIPTS_DIR/seafile-build.sh
+    ;;
+"seahub")
+    $BUILD_SCRIPTS_DIR/seahub-deploy.sh
+    ;;
+*)
+    $BUILD_SCRIPTS_DIR/zdb-build.sh
+    $BUILD_SCRIPTS_DIR/evhtp-build.sh
+    $BUILD_SCRIPTS_DIR/searpc-build.sh
+    $BUILD_SCRIPTS_DIR/ccnet-build.sh
+    $BUILD_SCRIPTS_DIR/seafile-build.sh
+    $BUILD_SCRIPTS_DIR/seahub-deploy.sh
+    ;;
+esac
+
+<<'COMMEND'
 
 # First clean everything
 ./clean.sh
