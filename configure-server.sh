@@ -1,4 +1,4 @@
 #!/bin/sh
 
-seafile-admin setup
+build/bin/seafile-admin setup
 

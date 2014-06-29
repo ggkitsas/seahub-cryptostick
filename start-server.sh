@@ -10,7 +10,7 @@ ZDB_DIR=$SRC_DIR/libzdb-2.12
 EVHTP_DIR=$SRC_DIR/libevhtp-1.1.6
 BUILD_DIR=$ROOT_DIR/build
 PATCH_DIR=$ROOT_DIR/patches
-CCNET_DATA_DIR=$BUILD_DIR/ccnet
+CCNET_DATA_DIR=$BUILD_DIR/.ccnet
 SEAFILE_DATA_DIR=$BUILD_DIR/seafile-data
 
 export CCNET_CONF_DIR=$BUILD_DIR/.ccnet
@@ -28,7 +28,7 @@ ccnet-server -c $CCNET_DATA_DIR -d
 echo "opening seaf server.."
 seaf-server -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 #echo "opening seaf-mon.."
-#seaf-mon -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
+seaf-mon -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 echo "opening http server.."
 httpserver -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 

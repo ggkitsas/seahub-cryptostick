@@ -23,30 +23,30 @@ BUILD_SCRIPTS_DIR=$ROOT_DIR/build-scripts
 
 case "$1" in
 "zdb")
-    $BUILD_SCRIPTS_DIR/zdb-build.sh
+    $BUILD_SCRIPTS_DIR/zdb-build.sh $2
     ;;
 "evhtp")
-    $BUILD_SCRIPTS_DIR/evhtp-build.sh
+    $BUILD_SCRIPTS_DIR/evhtp-build.sh $2
     ;;
 "searpc")
-    $BUILD_SCRIPTS_DIR/searpc-build.sh
+    $BUILD_SCRIPTS_DIR/searpc-build.sh $2
     ;;
 "ccnet")
-    $BUILD_SCRIPTS_DIR/ccnet-build.sh
+    $BUILD_SCRIPTS_DIR/ccnet-build.sh $2
     ;;
 "seafile")
-    $BUILD_SCRIPTS_DIR/seafile-build.sh
+    $BUILD_SCRIPTS_DIR/seafile-build.sh $2
     ;;
 "seahub")
     $BUILD_SCRIPTS_DIR/seahub-deploy.sh
     ;;
 *)
-    $BUILD_SCRIPTS_DIR/zdb-build.sh
-    $BUILD_SCRIPTS_DIR/evhtp-build.sh
-    $BUILD_SCRIPTS_DIR/searpc-build.sh
-    $BUILD_SCRIPTS_DIR/ccnet-build.sh
-    $BUILD_SCRIPTS_DIR/seafile-build.sh
-    $BUILD_SCRIPTS_DIR/seahub-deploy.sh
+    $BUILD_SCRIPTS_DIR/zdb-build.sh $2
+    $BUILD_SCRIPTS_DIR/evhtp-build.sh $2
+    $BUILD_SCRIPTS_DIR/searpc-build.sh $2
+    $BUILD_SCRIPTS_DIR/ccnet-build.sh $2
+    $BUILD_SCRIPTS_DIR/seafile-build.sh $2
+    $BUILD_SCRIPTS_DIR/seahub-deploy.sh $2
     ;;
 esac
 
