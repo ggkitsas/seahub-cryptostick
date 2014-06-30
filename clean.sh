@@ -2,9 +2,9 @@
 
 ROOT_DIR=`pwd`
 SRC_DIR=$ROOT_DIR/seafile-server/src
-SEARPC_DIR=$SRC_DIR/libsearpc-3.0.3-server
-CCNET_DIR=$SRC_DIR/ccnet-3.0.3-server
-SEAFILE_DIR=$SRC_DIR/seafile-3.0.4-server
+SEARPC_DIR=$SRC_DIR/libsearpc
+CCNET_DIR=$SRC_DIR/ccnet
+SEAFILE_DIR=$SRC_DIR/seafile
 SEAHUB_DIR=$ROOT_DIR/seafile-server/seahub
 ZDB_DIR=$SRC_DIR/libzdb-2.12
 EVHTP_DIR=$SRC_DIR/libevhtp-1.1.6
@@ -32,4 +32,11 @@ make clean
 cd $SEAFILE_DIR
 make clean
 
+cd $ROOT_DIR
 rm -rf $BUILD_DIR/*
+
+#rm -r ccnet
+#rm seahub.db
+#rm seahub_settings.py
+#rm seahub_settings.pyc
+
