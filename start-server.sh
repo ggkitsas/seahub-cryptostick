@@ -22,6 +22,9 @@ export LD_LIBRARY_PATH=$BUILD_DIR/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$BUILD_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 export PYTHONPATH=$SEAHUB_DIR/thirdpart:$BUILD_DIR/lib/python2.7/site-packages
 
+sudo pkill ccnet-server
+pkill httpserver
+sudo -k
 
 echo "opening ccnet server.."
 ccnet-server -c $CCNET_DATA_DIR -d
