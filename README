@@ -1,4 +1,21 @@
 Seahub server with smart card support
 =====================================
 
+### Build procedure: 
+1) ./build.sh zdb
+2) ./build.sh evhtp
+3) ./build.sh searpc
+4) ./build.sh ccnet
+5) ./build.sh seafile
+6) ./build.sh seahub
+7) cd <ROOT_DIR>/seafile-server/seahub/seahub
+        edit settings.py:
+            DEBUG = True
+            ENABLE_SIGNUP = True
+    cd <ROOT_DIR>/build/.ccnet
+        edit ccnet.conf
+            Add PORT = 10001 under [Network]
 
+Run the server with ./start-server.sh
+
+Logs can be presented with ./print-logs.sh and cleared with ./clear-logs.sh
