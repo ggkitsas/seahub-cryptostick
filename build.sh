@@ -12,6 +12,7 @@ export BUILD_DIR=$ROOT_DIR/build
 export PATCH_DIR=$ROOT_DIR/patches
 export CCNET_CONF_DIR=$BUILD_DIR/.ccnet
 export SEAFILE_CONF_DIR=$BUILD_DIR/.seaf-server
+export SEAFILE_DATA_DIR=$BUILD_DIR/seafile-data
 
 export PREFIX=$BUILD_DIR
 export PATH=$BUILD_DIR/bin:$PATH
