@@ -37,5 +37,9 @@ httpserver -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 
 echo "running seahub..."
 cd $SEAHUB_DIR
-#python manage.py runserver 127.0.0.1:8000
-python manage.py runserver 0.0.0.0:8000
+
+if [ $1 = "public" ]; then
+    python manage.py runserver 0.0.0.0:8000
+else
+    python manage.py runserver 127.0.0.1:8000
+fi
