@@ -20,9 +20,14 @@ export LD_LIBRARY_PATH=$BUILD_DIR/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$BUILD_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 export PYTHONPATH=$SEAHUB_DIR/thirdpart:$BUILD_DIR/lib/python2.7/site-packages
 
+DEPS=flex libssl-dev libarchive-dev
+
 BUILD_SCRIPTS_DIR=$ROOT_DIR/build-scripts
 
 case "$1" in
+"setup")
+    sudo apt-get install $(DEPS)
+    ;;
 "zdb")
     $BUILD_SCRIPTS_DIR/zdb-build.sh $2
     ;;
