@@ -20,10 +20,11 @@ export PREFIX=$BUILD_DIR
 export PATH=$BUILD_DIR/bin:$PATH
 export LD_LIBRARY_PATH=$BUILD_DIR/lib:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=$BUILD_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
-export PYTHONPATH=$SEAHUB_DIR/thirdpart:$BUILD_DIR/lib/python2.7/site-packages
+export PYTHONPATH=$SEAHUB_DIR/thirdpart:$BUILD_DIR/lib/python2.7/site-packages:$BUILD_DIR/lib/python2.7/thirdpart:$PYTHONPATH
 
 sudo pkill ccnet-server
 pkill httpserver
+pkill fileserver
 sudo -k
 
 echo "opening ccnet server.."
@@ -34,6 +35,7 @@ seaf-server -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 seaf-mon -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 echo "opening http server.."
 httpserver -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
+fileserver -c $CCNET_DATA_DIR -d $SEAFILE_DATA_DIR
 
 echo "running seahub..."
 cd $SEAHUB_DIR
