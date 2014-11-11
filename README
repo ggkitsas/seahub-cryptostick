@@ -1,6 +1,10 @@
 Seahub server with smart card support
 =====================================
 
+# Some deps to a fresh Ubuntu 14.10
+pip install django==1.5
+sudo easy_install --upgrade Djblets
+
 ### Build procedure: 
 1) ./build.sh zdb
 2) ./build.sh evhtp
@@ -8,6 +12,7 @@ Seahub server with smart card support
 4) ./build.sh ccnet
 5) ./build.sh seafile
 6) ./build.sh seahub
+7-) ./configure-server.sh
 7) cd <ROOT_DIR>/seafile-server/seahub/seahub
         edit settings.py:
             DEBUG = True
