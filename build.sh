@@ -46,6 +46,13 @@ case "$1" in
 "seahub")
     $BUILD_SCRIPTS_DIR/seahub-deploy.sh
     ;;
+"release")
+    $BUILD_SCRIPTS_DIR/zdb-build.sh $2
+    $BUILD_SCRIPTS_DIR/evhtp-build.sh $2
+    $BUILD_SCRIPTS_DIR/searpc-build.sh $2
+    $BUILD_SCRIPTS_DIR/ccnet-build.sh $2
+    $BUILD_SCRIPTS_DIR/seafile-build.sh $2
+    $BUILD_SCRIPTS_DIR/seahub-package.sh
 *)
     $BUILD_SCRIPTS_DIR/zdb-build.sh $2
     $BUILD_SCRIPTS_DIR/evhtp-build.sh $2
